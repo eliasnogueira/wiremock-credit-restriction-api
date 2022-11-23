@@ -1,0 +1,14 @@
+{
+    "name" : "Restriction request for a CPF with restriction",
+    "request" : {
+        "url" : "/api/v1/restrictions/97093236014",
+        "method" : "GET"
+    },
+    "response" : {
+        "status" : 200,
+        "bodyFileName" : "restrictions_response_200.json",
+        "headers" : {
+            "Content-Type" : "application/json"
+        }
+    }
+}

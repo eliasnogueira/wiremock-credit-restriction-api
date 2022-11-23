@@ -1,0 +1,20 @@
+{
+  "name" : "Simulation request containing a restriction",
+  "request" : {
+    "url" : "/api/v1/simulations/",
+    "method" : "POST",
+    "bodyPatterns" : [
+        {
+            "equalToJson" : {
+                "cpf": "97093236014"
+            }
+        } ]
+  },
+  "response" : {
+    "status" : 403,
+      "bodyFileName" : "simulation_with_restriction_response.json",
+    "headers" : {
+      "Content-Type" : "application/json"
+    }
+  }
+}
