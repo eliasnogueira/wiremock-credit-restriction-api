@@ -11,5 +11,5 @@ services:
       - "8088:80"
     volumes:
       # we copy our scripts onto the container
-      - ./__files:/wiremock/__files
-      - ./mappings:/wiremock/mappings
+      - ./__files:/wiremock-jre8-standalone/__files
+      - ./mappings:/wiremock-jre8-standalone/mappings
