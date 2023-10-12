@@ -2,14 +2,12 @@ version: '3.9'
 
 services:
   wiremock:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: wiremock-custom
+    image: "wiremock/wiremock:latest"
     container_name: wiremock-credit-restriction-api
     ports:
-      - "8088:80"
+      - "8087:8080"
     volumes:
-      # we copy our scripts onto the container
-      - ./__files://home/wiremock/__files
-      - ./mappings://home/wiremock/mappings
+#       we copy our scripts onto the container
+      - ./__files:/home/wiremock/__files
+      - ./mappings:/home/wiremock/mappings
+    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
