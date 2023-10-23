@@ -7,7 +7,7 @@ services:
     ports:
       - "8087:8080"
     volumes:
-#       we copy our scripts onto the container
+    # copy the local Wiremock files (__files and mappings folder) into the container
       - ./__files:/home/wiremock/__files
       - ./mappings:/home/wiremock/mappings
     entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
