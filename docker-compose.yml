@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   wiremock:
     image: "wiremock/wiremock:latest"
@@ -7,7 +5,7 @@ services:
     ports:
       - "8087:8080"
     volumes:
-    # copy the local Wiremock files (__files and mappings folder) into the container
+      # copy the local Wiremock files (__files and mappings folder) into the container
       - ./__files:/home/wiremock/__files
       - ./mappings:/home/wiremock/mappings
-    entrypoint: ["/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose"]
+    entrypoint: [ "/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose" ]
